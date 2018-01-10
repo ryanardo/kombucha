@@ -1,0 +1,24 @@
+{{#partial "content"}}
+    <form action="/Kombucha/new" method="post">
+        <label for="kombuchaFlavor">Choose a flavor</label>
+        <input id="kombuchaFlavor" type="radio" name="flavor" value="apple"> Apple<br>
+        <input id="kombuchaFlavor" type="radio" name="flavor" value="grape"> Grape<br>
+
+        <label for="kombuchaReview">Write you review here!</label>
+        <input id="kombuchaReview" name="kombuchaReview" type="text" value="apples are sour">
+
+        <button type="submit">Submit your Review</button>
+    </form>
+
+    <h2>REVIEWS</h2>
+    {{#if kombuchas}}
+        {{#each kombuchas}}
+            <p>{{ kombuchaReview }}</p>
+            <p>{{ kombuchaFlavor }}</p>
+        {{/each}}
+        {{else}}
+    {{/if}}
+
+
+{{/partial}}
+{{> layout.hbs}}
